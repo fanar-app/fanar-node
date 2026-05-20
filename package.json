@@ -1,0 +1,65 @@
+{
+  "name": "fanar",
+  "version": "0.1.0",
+  "description": "Debug receiver for Node.js — see what your app is doing, instantly.",
+  "keywords": [
+    "debug",
+    "ray",
+    "inspector",
+    "devtools"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fanar-app/fanar-node.git"
+  },
+  "homepage": "https://fanar-app.github.io/docs/node/",
+  "bugs": {
+    "url": "https://github.com/fanar-app/fanar-node/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./nestjs": {
+      "types": "./dist/nestjs.d.ts",
+      "default": "./dist/nestjs.js"
+    },
+    "./config": {
+      "types": "./dist/client.d.ts",
+      "default": "./dist/client.js"
+    }
+  },
+  "peerDependencies": {
+    "@nestjs/common": ">=9",
+    "@nestjs/core": ">=9",
+    "rxjs": ">=7"
+  },
+  "peerDependenciesMeta": {
+    "@nestjs/common": { "optional": true },
+    "@nestjs/core": { "optional": true },
+    "rxjs": { "optional": true }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^11.1.21",
+    "@nestjs/core": "^11.1.21",
+    "@types/node": "^20.0.0",
+    "rxjs": "^7.8.2",
+    "typeorm": "^0.3.29",
+    "typescript": "^5.0.0"
+  }
+}
