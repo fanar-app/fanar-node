@@ -9,7 +9,7 @@ Send any value from your Node.js app and watch it appear in the [Fanar desktop a
 ## Install
 
 ```bash
-npm install fanar
+npm install @fanar-app/fanar
 ```
 
 Requires the [Fanar desktop app](https://github.com/fanar-app/fanar/releases) running on your machine.
@@ -19,7 +19,7 @@ Requires the [Fanar desktop app](https://github.com/fanar-app/fanar/releases) ru
 ## Usage
 
 ```js
-import fanar from 'fanar'
+import fanar from '@fanar-app/fanar'
 
 // Primitives
 fanar('hello world')
@@ -72,7 +72,7 @@ fanar.run(() => {
 ## NestJS
 
 ```ts
-import { FanarModule, FanarTypeOrmLogger, withFanar, Fanar } from 'fanar/nestjs'
+import { FanarModule, FanarTypeOrmLogger, withFanar, Fanar } from '@fanar-app/fanar/nestjs'
 ```
 
 **Module setup:**
@@ -97,7 +97,7 @@ Once imported, a global interceptor fires after every request and sends: method,
 
 ```ts
 // data-source.ts
-import { FanarTypeOrmLogger } from 'fanar/nestjs'
+import { FanarTypeOrmLogger } from '@fanar-app/fanar/nestjs'
 
 export const AppDataSource = new DataSource({
   // ...
@@ -108,7 +108,7 @@ export const AppDataSource = new DataSource({
 **Prisma — automatic query logging:**
 
 ```ts
-import { withFanar } from 'fanar/nestjs'
+import { withFanar } from '@fanar-app/fanar/nestjs'
 
 export const prisma = withFanar(
   new PrismaClient({ log: [{ emit: 'event', level: 'query' }] })
@@ -118,7 +118,7 @@ export const prisma = withFanar(
 **Method tracing:**
 
 ```ts
-import { Fanar } from 'fanar/nestjs'
+import { Fanar } from '@fanar-app/fanar/nestjs'
 
 @Injectable()
 export class OrderService {

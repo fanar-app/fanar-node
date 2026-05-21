@@ -1,5 +1,5 @@
 {
-  "name": "fanar",
+  "name": "@fanar-app/fanar",
   "version": "0.1.0",
   "description": "Debug receiver for Node.js — see what your app is doing, instantly.",
   "keywords": [
